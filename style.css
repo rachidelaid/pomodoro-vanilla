@@ -24,13 +24,6 @@
   --font-three: 'Playfair Display', serif;
 
   --primary-font: var(--font-one);
-
-  --pomo-time: 1500s; /*25min*/
-  --short-time: 300s; /*5min*/
-  --long-time: 900s; /*15min*/
-  --time-break: 300s; /*5min*/
-
-  --primary-time: var(--pomo-time);
 }
 
 body {
@@ -134,7 +127,6 @@ body {
 
 .content h1 {
   font-size: 60px;
-  letter-spacing: 5px;
 }
 
 h4 {
@@ -151,6 +143,7 @@ h4 {
 
 .progress svg {
   stroke: var(--primary-color);
+  cursor: pointer;
 }
 
 .modal-wrap {
@@ -211,6 +204,7 @@ label {
   flex-direction: column;
   font-size: 14px;
   color: var(--bg-light);
+  width: 100%;
 }
 
 input {
@@ -221,6 +215,7 @@ input {
   padding: 8px;
   border-radius: 8px;
   margin-top: 5px;
+  width: 100%;
 }
 
 .font,

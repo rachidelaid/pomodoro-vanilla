@@ -4,7 +4,6 @@ const modal = document.querySelector('.modal');
 const modalClose = document.querySelector('.modal .title svg');
 const colors = document.querySelectorAll('.color span');
 const fonts = document.querySelectorAll('.font span');
-const inputs = document.querySelectorAll('.modal input');
 
 function toggle() {
   modalWrapper.classList.toggle('show');
@@ -12,33 +11,6 @@ function toggle() {
 
 setting.addEventListener('click', toggle);
 modalClose.addEventListener('click', toggle);
-
-inputs.forEach((inp) => {
-  inp.addEventListener('input', () => {
-    switch (inp.id) {
-      case 'long':
-        document.documentElement.style.setProperty(
-          '--long-time',
-          Number(inp.value) * 60 + 's'
-        );
-        break;
-
-      case 'short':
-        document.documentElement.style.setProperty(
-          '--short-time',
-          Number(inp.value) * 60 + 's'
-        );
-        break;
-
-      default:
-        document.documentElement.style.setProperty(
-          '--pomo-time',
-          Number(inp.value) * 60 + 's'
-        );
-        break;
-    }
-  });
-});
 
 fonts.forEach((font) => {
   font.addEventListener('click', () => {
