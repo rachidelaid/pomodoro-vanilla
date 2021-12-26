@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
 *,
 *::after,
@@ -15,10 +16,25 @@
   --color-one: #fa706e;
   --color-two: #6ef3f8;
   --color-three: #da81f9;
+
+  --primary-color: var(--color-one);
+
+  --font-one: 'Courier New', Courier, monospace;
+  --font-two: 'Yellowtail', cursive;
+  --font-three: 'Playfair Display', serif;
+
+  --primary-font: var(--font-one);
+
+  --pomo-time: 1500s; /*25min*/
+  --short-time: 300s; /*5min*/
+  --long-time: 900s; /*15min*/
+  --time-break: 300s; /*5min*/
+
+  --primary-time: var(--pomo-time);
 }
 
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: var(--primary-font);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,7 +66,7 @@ body {
 }
 
 .options .active {
-  background-color: var(--color-one);
+  background-color: var(--primary-color);
   color: var(--bg-color);
   font-weight: 500;
 }
@@ -117,7 +133,6 @@ body {
 }
 
 .content h1 {
-  font-family: 'Anton', sans-serif;
   font-size: 60px;
   letter-spacing: 5px;
 }
@@ -135,20 +150,26 @@ h4 {
 }
 
 .progress svg {
-  stroke: var(--color-one);
+  stroke: var(--primary-color);
 }
 
 .modal-wrap {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  top: 0;
+  top: -100vh;
   left: 0;
   background-color: #151932cb;
   z-index: 99;
-  display: none; /*flex*/
+  display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-wrap.show {
+  display: flex;
+  top: 0;
 }
 
 .modal {
@@ -170,7 +191,7 @@ h4 {
 }
 
 .title svg:hover {
-  color: var(--color-one);
+  color: var(--primary-color);
 }
 
 .time {
@@ -196,7 +217,7 @@ input {
   border: none;
   color: var(--bg-dark);
   background-color: #eef1fa;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: var(--primary-font);
   padding: 8px;
   border-radius: 8px;
   margin-top: 5px;
@@ -233,12 +254,34 @@ input {
   color: #fff;
 }
 
+.font .f1 {
+  font-family: var(--font-one);
+}
+
+.font .f2 {
+  font-family: var(--font-two);
+}
+
+.font .f3 {
+  font-family: var(--font-three);
+}
+
 .color span {
   width: 30px;
   aspect-ratio: 1;
   cursor: pointer;
   border-radius: 50%;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color span svg {
+  visibility: hidden;
+}
+
+.color .active svg {
+  visibility: visible;
 }
 
 .color .c1 {
