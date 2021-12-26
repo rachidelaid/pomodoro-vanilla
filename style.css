@@ -56,6 +56,8 @@ body {
   color: var(--bg-light);
   border-radius: 50px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .options .active {
@@ -150,7 +152,7 @@ h4 {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  top: -100vh;
+  top: -120vh;
   left: 0;
   background-color: #151932cb;
   z-index: 99;
@@ -238,8 +240,12 @@ input {
 }
 
 .font span {
-  padding: 5px;
+  width: 30px;
+  aspect-ratio: 1;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #eef1fa;
   cursor: pointer;
 }
@@ -292,6 +298,14 @@ input {
 @media (max-width: 1200px) {
   .timer-wrap {
     width: 25vw;
-    min-width: 300px;
+    min-width: 270px;
+  }
+
+  .modal {
+    width: 90%;
+  }
+
+  .time .list {
+    flex-direction: column;
   }
 }
