@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #1e2140;
+  --bg-dark: #151932;
+  --bg-light: #54587c;
+  --color-one: #fa706e;
+  --color-two: #6ef3f8;
+  --color-three: #da81f9;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  color: #fff;
+  padding: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.options {
+  background-color: var(--bg-dark);
+  padding: 5px;
+  border-radius: 50px;
+  display: flex;
+  gap: 10px;
+}
+
+.options p {
+  padding: 10px 15px;
+  color: var(--bg-light);
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.options .active {
+  background-color: var(--color-one);
+  color: var(--bg-color);
+  font-weight: 500;
+}
+
+.settings {
+  color: var(--bg-light);
+  cursor: pointer;
+}
+
+.timer-wrap {
+  width: 23vw;
+  aspect-ratio: 1;
+  background-color: var(--bg-dark);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: -10px -10px 30px -5px var(--bg-light) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer-wrap::before,
+.timer-wrap::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.timer-wrap::before {
+  z-index: -9;
+  box-shadow: -30px -25px 200px -15px var(--bg-light);
+}
+
+.timer-wrap::after {
+  z-index: -5;
+  box-shadow: 40px 40px 50px -15px var(--bg-dark);
+}
+
+.timer {
+  width: 90%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--bg-dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  z-index: 10;
+  background-color: var(--bg-dark);
+  width: 90%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.content h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 60px;
+  letter-spacing: 5px;
+}
+
+h4 {
+  letter-spacing: 8px;
+}
+
+.progress {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  z-index: 11;
+}
+
+.progress svg {
+  stroke: var(--color-one);
+}
+
+.modal-wrap {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #151932cb;
+  z-index: 99;
+  display: none; /*flex*/
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 50%;
+  background-color: #fff;
+  border-radius: 15px;
+  color: var(--bg-dark);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.title svg {
+  cursor: pointer;
+}
+
+.title svg:hover {
+  color: var(--color-one);
+}
+
+.time {
+  padding: 20px 0;
+  margin: 0 20px;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.time .list {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: var(--bg-light);
+}
+
+input {
+  border: none;
+  color: var(--bg-dark);
+  background-color: #eef1fa;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 8px;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.font,
+.color {
+  padding: 20px 0;
+  margin: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.font {
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.font .list,
+.color .list {
+  display: flex;
+  gap: 10px;
+}
+
+.font span {
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #eef1fa;
+  cursor: pointer;
+}
+
+.font .active {
+  background-color: var(--bg-dark);
+  color: #fff;
+}
+
+.color span {
+  width: 30px;
+  aspect-ratio: 1;
+  cursor: pointer;
+  border-radius: 50%;
+  display: block;
+}
+
+.color .c1 {
+  background-color: var(--color-one);
+}
+.color .c2 {
+  background-color: var(--color-two);
+}
+.color .c3 {
+  background-color: var(--color-three);
+}
