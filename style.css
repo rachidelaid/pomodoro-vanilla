@@ -288,3 +288,10 @@ input {
 .color .c3 {
   background-color: var(--color-three);
 }
+
+@media (max-width: 1200px) {
+  .timer-wrap {
+    width: 25vw;
+    min-width: 300px;
+  }
+}
