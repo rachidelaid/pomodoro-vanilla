@@ -62,16 +62,17 @@ function render(brk) {
   const secs = seconds - mins * 60;
 
   time.innerText = `${clockify(mins)}:${clockify(secs)}`;
+  document.title = `${clockify(mins)}:${clockify(secs)} - pomodoro timer`;
 
   if (breakStarted) {
     progress.setAttribute(
       'stroke-dasharray',
-      100 - (seconds * 100) / maxBreak + ', 100'
+      100 - (seconds * 100) / maxBreak + ', 100',
     );
   } else {
     progress.setAttribute(
       'stroke-dasharray',
-      (seconds * 100) / maxTime + ', 100'
+      (seconds * 100) / maxTime + ', 100',
     );
   }
 }

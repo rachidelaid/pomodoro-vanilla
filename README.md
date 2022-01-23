@@ -1,6 +1,7 @@
 # Pomodoro Timer
 
 This is a Pomodoro Timer designed by [frontendmentor](https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G).
+![screenshot](./src/screenshot.png)
 
 ## Built With
 
